@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pókedex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pokedéx App</h1>
+    <div id="header">
+        <h1 id="title">Pokedéx App</h1>
+    </div>
+    
+    <div id="search-area">
+        <h1 id="search-area-title">Explorar Pokédex</h1>
+        <div id="search-unity-area">
+            <div class="search-unity">
+                <label for="pokemon-name-input" class="search-label">Nome</label>
+                <br>
+                <input type="text" name="pokemon-name-input" id="pokemon-input" class="input" placeholder="Ex: Pikachu">
+            </div>
+            <div class="search-unity">
+                <label for="region-name-input" class="search-label">Região</label>
+                <br>
+                <input type="text" name="region-name-input" id="region-input" class="input" placeholder="Região">
+            </div>
+            <div class="search-unity">
+                <label for="tipo-name-input" class="search-label">Tipo</label>
+                <br>
+                <input type="text" name="tipo-name-input" id="tipo-input" class="input" placeholder="Ex: Fogo">
+            </div>
+        </div>
+        <button class="search-btn" id="limpar-filtros-btn">Limpar Filtros</button>
+        <button class="search-btn" >Aplicar Filtros</button>
+    </div>
+
+    <div></div>
 </body>
 </html>
