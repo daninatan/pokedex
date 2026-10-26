@@ -4,19 +4,19 @@
 }
 
 body{
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(21, 20, 35);
     display: flex;
     flex-direction: column;
 }
 #header{
-    background-color: black;
+    background-color: rgba(28, 36, 59, 0.763);
     width: 100%;
     height: 50px;
     padding: 30px;
 }
 
 #title{
-    color: white;
+    color: rgb(237, 0, 0);
     font-size: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -24,12 +24,11 @@ body{
 #search-area{
     justify-self: center;
     align-self: center;
-    background-color: white;
     margin-top: 50px;
     height: 300px;
     width: 80%;
     border-radius: 20px;
-    background-color: rgb(34, 32, 74);
+    background: linear-gradient(135deg, rgb(28, 36, 59), rgb(34, 32, 74));
 }
 
 #search-area-title{
@@ -105,14 +104,32 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(34, 32, 74);
     width: 100%;
     height: 350px;
     border-radius: 40px;
+    background:
+        linear-gradient(
+            125deg,
+            transparent 15%,
+            rgba(0, 255, 255, 0.18) 30%,
+            rgba(255, 100, 220, 0.22) 45%,
+            rgba(255, 230, 130, 0.18) 60%,
+            transparent 80%
+        ),
+        rgb(34, 32, 74);
+
+    background-size: 250% 250%;
+    background-position: 0% 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(160, 100, 255, 0.15);
+
+    transition: background-position 0.8s ease;
 }
 
 .pokemon-image{
-    width: 60%;
+    width: 50%;
     position: relative;
     top: -15%;
 }
@@ -124,4 +141,50 @@ body{
     font-weight: 800;
     position: relative;
     top: -10%;
+}
+
+.regiao{
+    border: solid rgb(153, 153, 153) 1px;
+    border-radius: 15px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    top: -5%;
+    background-color: rgba(161, 163, 164, 0.132);
+}
+
+.regiao-texto{
+    color: white;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tipos-box{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.tipo{
+    border: solid white 1px;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(54, 54, 54, 0.581);
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tipo-texto{
+    color: white;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
