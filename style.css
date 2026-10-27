@@ -188,3 +188,31 @@ body{
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.page-control{
+    margin-top: 30px;
+    height: 5%;
+    width: 15%;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-control{
+    color: white;
+    height: 30px;
+    width: 80px;
+    font-size: 20px;
+    border: solid white 1px;
+    border-radius: 30px;
+    background-color: rgb(62, 58, 131);
+}
+
+#page-number{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}

@@ -4,6 +4,25 @@ let type_name_input = document.querySelector("#tipo-input")
 let apply_filter_btn = document.querySelector("#aplicar-filtros-btn")
 let clear_filter_btn = document.querySelector("#limpar-filtros-btn")
 let pokemons_area = document.querySelector("#pokemons")
+let page_number = document.querySelector("#page-number")
+let last_btn = document.querySelector("#last")
+let next_btn = document.querySelector("#next")
+let pagina_atual = 1
+let paginas_maximas = Math.ceil(1025/20)
+
+last_btn.addEventListener("click", () =>{
+    if(pagina_atual > 1){
+         pagina_atual--
+        carregarPagina()
+    }
+})
+
+next_btn.addEventListener("click", () =>{
+    if(pagina_atual < paginas_maximas){
+        pagina_atual++
+        carregarPagina()
+    }
+})
 
 async function buscarDados(url){
     const resposta = await fetch(url)
@@ -15,8 +34,8 @@ async function buscarDados(url){
     return resposta.json()
 }
 
-async function buscarPokemons(){
-    return buscarDados("https://pokeapi.co/api/v2/pokemon?limit=100")
+async function buscarPokemons(limit, offset){
+    return buscarDados(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
 }
 
 async function buscarPokemon(nome){
@@ -84,7 +103,14 @@ function criarCard(nome, imagem, regiao, tipos){
 
 async function carregarPagina() {
     try {
-        const pokemons = await buscarPokemons()
+        page_number.textContent = pagina_atual
+        let pokemons = null
+        if((pagina_atual + 1) * 20 > 1025){
+            pokemons = await buscarPokemons(((pagina_atual + 1) * 20 - 1025), (pagina_atual - 1) * 20)
+        }else{
+            pokemons = await buscarPokemons(20, (pagina_atual - 1) * 20)
+        }
+        
         pokemons_area.replaceChildren()
 
         for(const element of pokemons.results) {
